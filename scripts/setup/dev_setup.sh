@@ -3,6 +3,10 @@
 # Copyright 2020-2021 The Databend Authors.
 # SPDX-License-Identifier: Apache-2.0.
 
+
+echo $(arch)
+echo $(uname -m)
+
 set -e
 
 SCRIPT_PATH="$(cd "$(dirname "$0")" >/dev/null 2>&1 && pwd)"
@@ -204,7 +208,7 @@ function install_sccache {
 function install_protobuf {
 	PACKAGE_MANAGER=$1
 
-	if protoc --version; then
+	if command -v protoc || echo false; then
 		echo "==> protoc is already installed"
 		return
 	fi

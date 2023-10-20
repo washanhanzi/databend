@@ -1,5 +1,8 @@
 FROM debian:bullseye
 
+RUN echo $(arch)
+RUN echo $(uname -m)
+
 ENV TERM=dumb
 ENV DEBIAN_FRONTEND=noninteractive
 
