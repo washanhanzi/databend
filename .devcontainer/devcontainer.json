@@ -6,9 +6,8 @@
 		"source=${localEnv:HOME},target=/home/builder,type=bind,consistency=cached"
 	],
 	"dockerFile": "Dockerfile",
-	"remoteUser": "builder",
+	"remoteUser": "dev",
 	"updateRemoteUserUID": true,
-	"postCreateCommand": "sudo chown -R builder /opt/rust",
 	"customizations": {
 		"vscode": {
 			"extensions": [
